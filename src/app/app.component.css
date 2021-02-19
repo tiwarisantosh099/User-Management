@@ -1,0 +1,7 @@
+header{margin: 0; padding: 25px 0; float: left; width:100%; background: rgba(0,0,0,0.1); text-align: right;}
+header ul{float: right;}
+header ul li{display: inline; font-size: 16px;}
+header ul li a{color: #000; font-family: Arial, Helvetica, sans-serif; margin: 0 25px 0 0;}
+header ul{float: right;}
+
+content{margin: 0; padding: 25px 0; float: left; width:100%;}

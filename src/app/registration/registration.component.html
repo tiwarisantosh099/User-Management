@@ -1,0 +1,27 @@
+<form class="text-center border border-light p-5 registration_frm" style="max-width: 50%; margin:0 auto;" #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+        
+    <p class="h4 mb-4">Sign up</p>
+    <div class="row">
+        <div class="col-sm-6">
+            <input type="email" class="form-control mb-4" ngModel #email="ngModel" placeholder="E-mail" name="email" required>
+            <div class="frm-validation">
+                <small *ngIf="email.pristine && email.touched">Please enter this field.</small>
+                <small *ngIf="email.dirty && email.touched && email.invalid">Please enter correct email address.</small>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <input type="password" class="form-control mb-4" placeholder="Password" ngModel required #password="ngModel" name="password" minlength="8">
+            <div class="frm-validation">
+                <small *ngIf="(password.pristine && password.touched)">Please enter password.</small>
+                <small *ngIf="password.dirty && password.touched && password.invalid">Password must be 8 characters long.</small>
+            </div>
+        </div>
+    </div>
+    <!-- E-mail -->
+    
+    <!-- Sign up button -->
+    <button class="btn btn-info my-4 btn-block waves-effect waves-light" type="submit" [disabled]="!registerForm.form.valid" >Register</button>
+    <p>{{apiMsg}}</p>
+    <p>{{stausMsg}}</p>
+    <!-- Social register -->
+    </form>
