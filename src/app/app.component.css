@@ -5,3 +5,6 @@ header ul li a{color: #000; font-family: Arial, Helvetica, sans-serif; margin: 0
 header ul{float: right;}
 
 content{margin: 0; padding: 25px 0; float: left; width:100%;}
+.rt-hdr-itms span{color: black; text-decoration: underline; transition: all 1s; margin-left:15px;}
+.rt-hdr-itms span:hover{text-decoration: none;}
+.rt-hdr-itms{margin-top: 8px;}

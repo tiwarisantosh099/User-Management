@@ -1,19 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { environment } from '../../environments/environment';
-import { UserDisplayModel } from '../all_models';
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class SingleUserService {
+export class SingleResourcesService {
+
   constructor(private http: HttpClient) { }
 
-  private _users_url = environment.apiUrl+'/api/users/';
+  private _users_url = environment.apiUrl+'/api/unknown/';
   
-  showSingleUsers(user_id){
-    let id = user_id;
+  showSingleResource(res_id){
+    let id = res_id;
     return this.http.get<any>(this._users_url+id);
   }
 }

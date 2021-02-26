@@ -1,9 +1,17 @@
 <div class="row">
     <div class="col-sm-12">
-        <h3>Single User's Details:</h3>
+        <h3 class="mb-4">Single User's Details:</h3>
     </div>
     <div class="col-sm-5">
+        <img src="{{user_info?.avatar}}" alt="" style="width:100%;">
     </div>
     <div class="col-sm-7">
+        <p *ngIf="user_info?.id"><strong>ID: </strong>{{user_info?.id}}</p>
+        <p *ngIf="user_info?.id"><strong>First Name: </strong>{{user_info?.first_name}}</p>
+        <p *ngIf="user_info?.id"><strong>Last Name: </strong>{{user_info?.last_name}}</p>
+        <p *ngIf="user_info?.email"><strong>Email: </strong><a href="mailto:{{user_info?.email}}">{{user_info?.email}}</a></p>
+        <p *ngIf="user_info?.email"><strong>Description: </strong>{{user_info_support?.text}}</p>
+        <p *ngIf="user_info?.email"><strong>Link: </strong><a href="user_info_support?.url">{{user_info?.url}}</a></p>
+        
     </div>
 </div>

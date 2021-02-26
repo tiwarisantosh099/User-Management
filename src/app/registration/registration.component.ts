@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { RegistrationService } from '../_services/registration.service';
 import { UserRegisterModel } from '../all_models';
 import {NgForm} from '@angular/forms';
-
+import { Router } from '@angular/router';
+import { AuthService } from '../_services/auth.service';
 
 @Component({
   selector: 'app-registration',
@@ -16,7 +17,11 @@ export class RegistrationComponent implements OnInit {
   apiMsg = '';
   stausMsg;
 
-  constructor(private registrationService: RegistrationService) { }
+  constructor(
+    private registrationService: RegistrationService,
+    private router: Router,
+    private authService: AuthService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -38,14 +43,19 @@ export class RegistrationComponent implements OnInit {
       data => {
         console.log('Success !!!', data);
         if(data.id){
-          this.apiMsg = 'You have successfully logged in but the email address is used as "eve.holt@reqres.in" and the password is used as the "pistol"';
-          this.stausMsg = 'You have successfully loggedin...';
+          this.apiMsg = 'You have successfully registered in but the email address is used as "eve.holt@reqres.in" and the password is used as the "pistol"';
+          this.stausMsg = 'You have successfully registered...';
+          // localStorage.setItem('token', data.token);
+          this.authService.setToken(data.token);
+          setTimeout(() => {
+            this.router.navigate['/users'];
+          }, 1000);
         }
         else{
           this.stausMsg = 'Due to some problem you could not loggedin successfully...';
         }
 
-        // localStorage.setItem('token', data.token);
+        
         // localStorage.setItem('user_id', data.result.master_user_id);
         // localStorage.setItem('registered', 'half');
         // if(data.registered == false){

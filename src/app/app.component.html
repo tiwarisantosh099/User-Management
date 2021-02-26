@@ -13,11 +13,12 @@
           </li>
         </ul>
       </div>
+      <p class="rt-hdr-itms" *ngIf="user_Id">Your ID: {{user_Id}} <span class="" (click)="logout()">Logout</span></p>
     </div>
   </nav>
   <!-- Navbar -->
 </header>
-
+<!-- <app-login (myOutput) ="GetChildData($event)"></app-login>  -->
 <content>
   <div class="container">
     <router-outlet></router-outlet>

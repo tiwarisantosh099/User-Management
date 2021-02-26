@@ -1,1 +1,25 @@
-<p>resources works!</p>
+<div class="row">
+    <div class="col-sm-12">
+        <h3>Resources:</h3>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-4 mt-4 crds" *ngFor="let item of resoresItems" (click)="goToSingleRes(item?.id);">
+        <div class="card">
+          <div class="card-body">
+            <h6 *ngIf="item?.id"><strong>ID: </strong>{{item?.id}}</h6>
+            <h5 class="card-title" *ngIf="item?.name"><strong>Name: </strong>{{item?.name}}</h5>
+            <p class="card-text" *ngIf="item?.year"><strong>Year: </strong>{{item?.year}}</p>
+            <p class="card-text" *ngIf="item?.color"><strong>Color: </strong>{{item?.color}}</p>
+            <p class="card-text" *ngIf="item?.pantone_value"><strong>Pantone Value: </strong>{{item?.pantone_value}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" *ngIf="resoresItems?.length > 0">
+    <div class="col-sm-12">
+        <h3 class="text-center">{{comp_msg}}</h3>
+    </div>
+</div>

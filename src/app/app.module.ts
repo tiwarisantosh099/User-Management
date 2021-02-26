@@ -11,6 +11,10 @@ import { authInterceptorProviders } from '../_helpers/auth.interceptor';
 import { UsersComponent } from './users/users.component';
 import { ResourcesComponent } from './resources/resources.component';
 import { SingleUserComponent } from './single-user/single-user.component';
+import { SingleResourceComponent } from './single-resource/single-resource.component';
+import { HttpInterceptor, HttpHandler, HttpRequest } from '@angular/common/http';
+import { UniversalAppInterceptor } from './_services/universal-app-interceptor.service';
+import {HTTP_INTERCEPTORS} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,8 @@ import { SingleUserComponent } from './single-user/single-user.component';
     RegistrationComponent,
     UsersComponent,
     ResourcesComponent,
-    SingleUserComponent
+    SingleUserComponent,
+    SingleResourceComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +32,13 @@ import { SingleUserComponent } from './single-user/single-user.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [authInterceptorProviders],
+  providers: [
+    authInterceptorProviders, 
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: UniversalAppInterceptor,
+      multi: true, 
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

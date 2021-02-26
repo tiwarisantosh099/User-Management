@@ -1,3 +1,8 @@
 .registration_frm input{margin-bottom: 10px !important;}
 .registration_frm small, .frm-validation {text-align: left;}
 .registration_frm{background: rgba(0,0,0,0.2);}
+.fllsc{background: url(../../assets/images/milky-way_1401-347.jpg) no-repeat scroll 0 0; width: 100%;  margin: 0; padding: 0; background-size: 100%; position: absolute; left: 0; height: calc(100vh - 85px); top:81px;}
+.registration_frm{color:#fff;}
+.registration_frm{color: #fff; /* vertical-align: middle; */ position: absolute; text-align: center; left: 0; right: 0;
+    top: calc(50%); transform: translateY(-50%);}
+    .fllsc > .row{height: 70vh; margin: 0%;;}

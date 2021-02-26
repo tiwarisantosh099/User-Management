@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-sm-12">
+        <h3 class="mb-4">Single Resource's Details:</h3>
+    </div>
+    <div class="col-sm-12">
+        <p *ngIf="resource?.id"><strong>ID: </strong>{{resource?.id}}</p>
+        <p *ngIf="resource?.name"><strong>First Name: </strong>{{resource?.name}}</p>
+        <p *ngIf="resource?.pantone_value"><strong>Last Name: </strong>{{resource?.pantone_value}}</p>
+        <p *ngIf="resource?.year"><strong>Email: </strong>{{resource?.year}}</p>
+        <p *ngIf="support?.text"><strong>Description: </strong>{{support?.text}}</p>
+        <p *ngIf="support?.url"><strong>Link: </strong><a href="support?.url">{{support?.url}}</a></p>
+    </div>
+</div>
